@@ -1,0 +1,86 @@
+/*==============================================
+=               Aspectos Generales             =
+===============================================*/
+/* line 5, SCSS/_globales.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 11, SCSS/_globales.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 15, SCSS/_globales.scss */
+.wrapper {
+  width: 80%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/*=======  Fin de Aspectos Generales  ========*/
+/*==============================================
+=                      Header                   =
+===============================================*/
+/* line 6, SCSS/_header.scss */
+header .logo-telefono {
+  border-bottom: 4px solid #16ACFF;
+  padding: 10px 0;
+}
+
+/* line 11, SCSS/_header.scss */
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 16, SCSS/_header.scss */
+header .wrapper .logo {
+  width: 200px;
+}
+
+/* line 19, SCSS/_header.scss */
+header .wrapper .logo img {
+  width: 100%;
+  display: block;
+}
+
+/* line 25, SCSS/_header.scss */
+header .wrapper .telefono-header {
+  font: 30px "Secular One";
+  color: #16ACFF;
+  transition: color 0.3s ease;
+}
+
+/* line 30, SCSS/_header.scss */
+header .wrapper .telefono-header:hover {
+  color: #0091e2;
+}
+
+/* line 35, SCSS/_header.scss */
+header .wrapper .menu {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* line 42, SCSS/_header.scss */
+header .wrapper .menu a {
+  font: 16px "Montserrat";
+  letter-spacing: 2px;
+  color: #000;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* line 49, SCSS/_header.scss */
+header .wrapper .menu a:hover {
+  color: #16ACFF;
+}
+
+/*=============  Fin de Header  ==============*/

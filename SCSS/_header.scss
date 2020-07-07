@@ -1,0 +1,57 @@
+/*==============================================
+=                      Header                   =
+===============================================*/
+
+header {
+    .logo-telefono {
+        border-bottom: 4px solid $celeste;
+        padding: 10px 0;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            width: 200px;
+
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .telefono-header {
+            font: 30px $texto;
+            color: $celeste;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: darken($celeste,10);
+            }
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            padding: 10px 0;
+
+            a {
+                font: 16px $titulo;
+                letter-spacing: 2px;
+                color: $negro;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $celeste;
+                }
+            }
+        }
+    }
+}
+
+/*=============  Fin de Header  ==============*/
