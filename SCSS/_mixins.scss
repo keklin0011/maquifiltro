@@ -1,0 +1,23 @@
+@mixin mb {
+    @media only screen and (max-width: #{$mb}) {
+        @content;
+    }
+}
+
+@mixin mb-ls {
+    @media only screen and (max-width: #{$mb-ls}) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media only screen and (max-width: #{$tb}) {
+        @content;
+    }
+}
+
+@mixin dt {
+    @media only screen and (max-width: #{$dt}) {
+        @content;
+    }
+}

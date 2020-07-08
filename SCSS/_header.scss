@@ -3,9 +3,61 @@
 ===============================================*/
 
 header {
+    .menu-bar {
+        display: none;
+        width: 100%;
+        height: 40px;
+        background-color: $celeste;
+        position: fixed;
+        top: 0;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 10;
+        box-shadow: 0 0 2px 1px rgba($negro,0.4);
+
+        @include tb {
+            display: flex;
+        }
+
+        .bt-menu {
+            width: 30px;
+            margin-right: 15px;
+            cursor: pointer;
+
+            .uno, .dos, .tres {
+                width: 100%;
+                height: 2px;
+                background-color: $blanco;
+                transition: all 0.5s ease;
+            }
+    
+            .dos {
+                margin: 6px 0;
+            }
+        }
+
+        .bt-menu2 {
+            .dos {
+                opacity: 0;
+            }
+    
+            .uno {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+    
+            .tres {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+    }
+
     .logo-telefono {
         border-bottom: 4px solid $celeste;
         padding: 10px 0;
+
+        @include tb {
+            padding: 50px 0 10px;
+        }
     }
 
     .wrapper {
@@ -13,8 +65,16 @@ header {
         justify-content: space-between;
         align-items: center;
 
+        @include mb {
+            flex-direction: column;
+        }
+
         .logo {
             width: 200px;
+
+            @include mb {
+                width: 90%;
+            }
 
             img {
                 width: 100%;
@@ -30,6 +90,10 @@ header {
             &:hover {
                 color: darken($celeste,10);
             }
+
+            @include mb {
+                margin-top: 20px;
+            }
         }
 
         .menu {
@@ -39,6 +103,20 @@ header {
             justify-content: space-between;
             padding: 10px 0;
 
+            @include tb {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+
+            li {
+                @include tb {
+                    width: 100%;
+                    border-top: 1px solid rgba($blanco,0.15);
+                    text-align: center;
+                }
+            }
+
             a {
                 font: 16px $titulo;
                 letter-spacing: 2px;
@@ -46,10 +124,38 @@ header {
                 text-transform: uppercase;
                 transition: color 0.3s ease;
 
+                @include tb {
+                    color: $blanco;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    padding: 8px 0;
+                }
+
                 &:hover {
                     color: $celeste;
+
+                    @include tb {
+                        color: $blanco;
+                        background-color: darken($celeste,10);
+                    }
                 }
             }
+        }
+    }
+
+    .wrapper-menu {
+        @include tb {
+            width: 100%;
+        }
+    }
+
+    .main-menu {
+        @include tb {
+            width: 100%;
+            position: fixed;
+            top: -190px;
+            background-color: $celeste;
         }
     }
 }

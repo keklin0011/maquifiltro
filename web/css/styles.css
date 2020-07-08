@@ -25,42 +25,126 @@ a {
 =                      Header                   =
 ===============================================*/
 /* line 6, SCSS/_header.scss */
+header .menu-bar {
+  display: none;
+  width: 100%;
+  height: 40px;
+  background-color: #0e75ce;
+  position: fixed;
+  top: 0;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 6, SCSS/_header.scss */
+  header .menu-bar {
+    display: flex;
+  }
+}
+
+/* line 22, SCSS/_header.scss */
+header .menu-bar .bt-menu {
+  width: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* line 27, SCSS/_header.scss */
+header .menu-bar .bt-menu .uno, header .menu-bar .bt-menu .dos, header .menu-bar .bt-menu .tres {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* line 34, SCSS/_header.scss */
+header .menu-bar .bt-menu .dos {
+  margin: 6px 0;
+}
+
+/* line 40, SCSS/_header.scss */
+header .menu-bar .bt-menu2 .dos {
+  opacity: 0;
+}
+
+/* line 44, SCSS/_header.scss */
+header .menu-bar .bt-menu2 .uno {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* line 48, SCSS/_header.scss */
+header .menu-bar .bt-menu2 .tres {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* line 54, SCSS/_header.scss */
 header .logo-telefono {
-  border-bottom: 4px solid #16ACFF;
+  border-bottom: 4px solid #0e75ce;
   padding: 10px 0;
 }
 
-/* line 11, SCSS/_header.scss */
+@media only screen and (max-width: 1024px) {
+  /* line 54, SCSS/_header.scss */
+  header .logo-telefono {
+    padding: 50px 0 10px;
+  }
+}
+
+/* line 63, SCSS/_header.scss */
 header .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* line 16, SCSS/_header.scss */
+@media only screen and (max-width: 480px) {
+  /* line 63, SCSS/_header.scss */
+  header .wrapper {
+    flex-direction: column;
+  }
+}
+
+/* line 72, SCSS/_header.scss */
 header .wrapper .logo {
   width: 200px;
 }
 
-/* line 19, SCSS/_header.scss */
+@media only screen and (max-width: 480px) {
+  /* line 72, SCSS/_header.scss */
+  header .wrapper .logo {
+    width: 90%;
+  }
+}
+
+/* line 79, SCSS/_header.scss */
 header .wrapper .logo img {
   width: 100%;
   display: block;
 }
 
-/* line 25, SCSS/_header.scss */
+/* line 85, SCSS/_header.scss */
 header .wrapper .telefono-header {
   font: 30px "Secular One";
-  color: #16ACFF;
+  color: #0e75ce;
   transition: color 0.3s ease;
 }
 
-/* line 30, SCSS/_header.scss */
+/* line 90, SCSS/_header.scss */
 header .wrapper .telefono-header:hover {
-  color: #0091e2;
+  color: #0b5a9e;
 }
 
-/* line 35, SCSS/_header.scss */
+@media only screen and (max-width: 480px) {
+  /* line 85, SCSS/_header.scss */
+  header .wrapper .telefono-header {
+    margin-top: 20px;
+  }
+}
+
+/* line 99, SCSS/_header.scss */
 header .wrapper .menu {
   width: 100%;
   display: flex;
@@ -69,7 +153,25 @@ header .wrapper .menu {
   padding: 10px 0;
 }
 
-/* line 42, SCSS/_header.scss */
+@media only screen and (max-width: 1024px) {
+  /* line 99, SCSS/_header.scss */
+  header .wrapper .menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 112, SCSS/_header.scss */
+  header .wrapper .menu li {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+  }
+}
+
+/* line 120, SCSS/_header.scss */
 header .wrapper .menu a {
   font: 16px "Montserrat";
   letter-spacing: 2px;
@@ -78,9 +180,45 @@ header .wrapper .menu a {
   transition: color 0.3s ease;
 }
 
-/* line 49, SCSS/_header.scss */
+@media only screen and (max-width: 1024px) {
+  /* line 120, SCSS/_header.scss */
+  header .wrapper .menu a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+/* line 135, SCSS/_header.scss */
 header .wrapper .menu a:hover {
-  color: #16ACFF;
+  color: #0e75ce;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 135, SCSS/_header.scss */
+  header .wrapper .menu a:hover {
+    color: #fff;
+    background-color: #0b5a9e;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 147, SCSS/_header.scss */
+  header .wrapper-menu {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 153, SCSS/_header.scss */
+  header .main-menu {
+    width: 100%;
+    position: fixed;
+    top: -190px;
+    background-color: #0e75ce;
+  }
 }
 
 /*=============  Fin de Header  ==============*/
