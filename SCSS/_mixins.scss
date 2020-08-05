@@ -4,12 +4,6 @@
     }
 }
 
-@mixin mb-ls {
-    @media only screen and (max-width: #{$mb-ls}) {
-        @content;
-    }
-}
-
 @mixin tb {
     @media only screen and (max-width: #{$tb}) {
         @content;
@@ -20,4 +14,9 @@
     @media only screen and (max-width: #{$dt}) {
         @content;
     }
+}
+
+// Estilos de Elementos
+@mixin transition($tempo) {
+    transition: all #{$tempo}s ease;
 }

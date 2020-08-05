@@ -5,18 +5,18 @@
 header {
     .menu-bar {
         display: none;
-        width: 100%;
-        height: 40px;
-        background-color: $celeste;
-        position: fixed;
-        top: 0;
-        justify-content: flex-end;
-        align-items: center;
-        z-index: 10;
-        box-shadow: 0 0 2px 1px rgba($negro,0.4);
 
         @include tb {
             display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            background-color: $celeste;
+            position: fixed;
+            top: 0;
+            z-index: 500;
+            box-shadow: 0 0 3px 3px rgba($negro,0.4);
         }
 
         .bt-menu {
@@ -119,6 +119,7 @@ header {
 
             a {
                 font: 16px $titulo;
+                font-weight: 800;
                 letter-spacing: 2px;
                 color: $negro;
                 text-transform: uppercase;
@@ -150,13 +151,41 @@ header {
         }
     }
 
+    .bloque {
+        height: 42px;
+        display: none;
+    }
+
     .main-menu {
+        position: relative;
+        z-index: 300;
+
         @include tb {
             width: 100%;
             position: fixed;
             top: -190px;
             background-color: $celeste;
         }
+    }
+
+    @keyframes baja {
+        from {
+            top: -77px;
+        }
+    
+        to {
+            top: 0;
+        }
+    }
+
+    .main-menu-fijo {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: rgba($blanco,0.97);
+        box-shadow: 0 0 2px 2px rgba($negro,0.3);
+        animation: baja 0.5s;
+        @include transition(0.5);
     }
 }
 

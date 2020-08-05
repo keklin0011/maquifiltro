@@ -40,3 +40,25 @@ window.addEventListener('load', () => {
 		main_menu();
 	}
 });
+
+
+// Menú principal fijo
+var altura = $('#main-menu').offset().top;
+
+console.log(altura);
+
+$(window).on('scroll', function() {
+	if ($(window).width() > 768) {
+		if ($(window).scrollTop() > altura + 126) {
+			$('.bloque').css({
+				display: 'block'
+			});
+			$('#main-menu').addClass('main-menu-fijo');
+		} else {
+			$('.bloque').css({
+				display: 'none'
+			});
+			$('#main-menu').removeClass('main-menu-fijo');
+		}
+	}
+});

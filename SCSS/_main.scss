@@ -1,0 +1,179 @@
+/*==============================================
+=                       Main                    =
+===============================================*/
+
+.slider {
+    width: 100%;
+    height: 320px;
+    background-image: url(../img/slider/slider-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    ul {
+        height: 100%;
+    }
+
+    li {
+        width: 100%;
+        height: 100%;
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 100%;
+
+            @include tb {
+                justify-content: center;
+            }
+        }
+
+        .slider-caption {
+            align-self: center;
+            width: calc(100% - 400px);
+            position: relative;
+            z-index: 200;
+
+            @include tb {
+                width: 100%;
+            }
+
+            .titulo-slider {
+                font: 45px $titulo;
+                font-weight: bolder;
+                letter-spacing: 5px;
+                margin-bottom: 1rem;
+
+                @include tb {
+                    font-size: 30px;
+                    letter-spacing: 0;
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+            }
+
+            p {
+                font: 30px $texto;
+                color: $gris;
+
+                @include tb {
+                    display: none;
+                }
+            }
+        }
+
+        .img-slider {
+            position: relative;
+            width: 380px;
+            bottom: -20px;
+        }
+    }
+
+    .flecha-slider {
+        position: absolute;
+    }
+
+    .prev, .next {
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 50px;
+        color: rgba($celeste,0.4);
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        @include mb {
+            display: none;
+        }
+
+        &:hover {
+            color: $celeste;
+        }
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+}
+
+.slogan {
+    width: 80%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    border-top: 1px solid lighten($gris,35);
+    border-bottom: 1px solid lighten($gris,35);
+    font: 30px $texto;
+    color: $gris;
+
+    @include mb {
+        width: 100%;
+    }
+}
+
+.articles {
+    article {
+        padding: 30px 0;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid lighten($gris,35);
+        }
+
+        &:nth-child(odd) {
+            .wrapper {
+                flex-direction: row-reverse;
+
+                @include tb {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include tb {
+                flex-direction: column;
+            }
+
+            .texto-article {
+                width: calc(47% - 4rem);
+
+                @include tb {
+                    width: 100%;
+                }
+            }
+
+            .titulo-article {
+                font: 50px $texto;
+                line-height: 1.2;
+
+                @include mb {
+                    font-size: 35px;
+                }
+            }
+
+            p {
+                line-height: 1.2;
+            }
+
+            .img-article {
+                max-width: 800px;
+                width: 53%;
+
+                @include tb {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*===============  Fin de Main  ================*/

@@ -12,10 +12,50 @@ a {
     text-decoration: none;
 }
 
+p {
+    font: $p-size $titulo;
+    color: $negro;
+}
+
 .wrapper {
     width: 80%;
     max-width: 1500px;
     margin: 0 auto;
+
+    @include mb {
+        width: 90%;
+    }
+}
+
+.texto-celeste {
+    color: $celeste;
+}
+
+.gordita-celeste {
+    color: $celeste;
+    font-weight: 600;
+}
+
+figure, div {
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
+.cta-btn {
+    font: 20px $texto;
+    color: $celeste;
+    border: 2px solid $celeste;
+    padding: 5px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+
+    &:hover {
+        color: $blanco;
+        background-color: $celeste;
+    }
 }
 
 /*=======  Fin de Aspectos Generales  ========*/

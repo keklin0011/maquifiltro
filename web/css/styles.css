@@ -14,10 +14,57 @@ a {
 }
 
 /* line 15, SCSS/_globales.scss */
+p {
+  font: 17px "Montserrat";
+  color: #000;
+}
+
+/* line 20, SCSS/_globales.scss */
 .wrapper {
   width: 80%;
   max-width: 1500px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 20, SCSS/_globales.scss */
+  .wrapper {
+    width: 90%;
+  }
+}
+
+/* line 30, SCSS/_globales.scss */
+.texto-celeste {
+  color: #0e75ce;
+}
+
+/* line 34, SCSS/_globales.scss */
+.gordita-celeste {
+  color: #0e75ce;
+  font-weight: 600;
+}
+
+/* line 40, SCSS/_globales.scss */
+figure img, div img {
+  width: 100%;
+  display: block;
+}
+
+/* line 46, SCSS/_globales.scss */
+.cta-btn {
+  font: 20px "Secular One";
+  color: #0e75ce;
+  border: 2px solid #0e75ce;
+  padding: 5px 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+/* line 55, SCSS/_globales.scss */
+.cta-btn:hover {
+  color: #fff;
+  background-color: #0e75ce;
 }
 
 /*=======  Fin de Aspectos Generales  ========*/
@@ -27,21 +74,21 @@ a {
 /* line 6, SCSS/_header.scss */
 header .menu-bar {
   display: none;
-  width: 100%;
-  height: 40px;
-  background-color: #0e75ce;
-  position: fixed;
-  top: 0;
-  justify-content: flex-end;
-  align-items: center;
-  z-index: 10;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   /* line 6, SCSS/_header.scss */
   header .menu-bar {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #0e75ce;
+    position: fixed;
+    top: 0;
+    z-index: 500;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -86,7 +133,7 @@ header .logo-telefono {
   padding: 10px 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   /* line 54, SCSS/_header.scss */
   header .logo-telefono {
     padding: 50px 0 10px;
@@ -153,7 +200,7 @@ header .wrapper .menu {
   padding: 10px 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   /* line 99, SCSS/_header.scss */
   header .wrapper .menu {
     flex-direction: column;
@@ -162,7 +209,7 @@ header .wrapper .menu {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   /* line 112, SCSS/_header.scss */
   header .wrapper .menu li {
     width: 100%;
@@ -174,13 +221,14 @@ header .wrapper .menu {
 /* line 120, SCSS/_header.scss */
 header .wrapper .menu a {
   font: 16px "Montserrat";
+  font-weight: 800;
   letter-spacing: 2px;
   color: #000;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   /* line 120, SCSS/_header.scss */
   header .wrapper .menu a {
     color: #fff;
@@ -191,28 +239,40 @@ header .wrapper .menu a {
   }
 }
 
-/* line 135, SCSS/_header.scss */
+/* line 136, SCSS/_header.scss */
 header .wrapper .menu a:hover {
   color: #0e75ce;
 }
 
-@media only screen and (max-width: 1024px) {
-  /* line 135, SCSS/_header.scss */
+@media only screen and (max-width: 768px) {
+  /* line 136, SCSS/_header.scss */
   header .wrapper .menu a:hover {
     color: #fff;
     background-color: #0b5a9e;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  /* line 147, SCSS/_header.scss */
+@media only screen and (max-width: 768px) {
+  /* line 148, SCSS/_header.scss */
   header .wrapper-menu {
     width: 100%;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  /* line 153, SCSS/_header.scss */
+/* line 154, SCSS/_header.scss */
+header .bloque {
+  height: 42px;
+  display: none;
+}
+
+/* line 159, SCSS/_header.scss */
+header .main-menu {
+  position: relative;
+  z-index: 300;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 159, SCSS/_header.scss */
   header .main-menu {
     width: 100%;
     position: fixed;
@@ -221,4 +281,401 @@ header .wrapper .menu a:hover {
   }
 }
 
+@keyframes baja {
+  from {
+    top: -77px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/* line 181, SCSS/_header.scss */
+header .main-menu-fijo {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  animation: baja 0.5s;
+  transition: all 0.5s ease;
+}
+
 /*=============  Fin de Header  ==============*/
+/*==============================================
+=                       Main                    =
+===============================================*/
+/* line 5, SCSS/_main.scss */
+.slider {
+  width: 100%;
+  height: 320px;
+  background-image: url(../img/slider/slider-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* line 14, SCSS/_main.scss */
+.slider ul {
+  height: 100%;
+}
+
+/* line 18, SCSS/_main.scss */
+.slider li {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 22, SCSS/_main.scss */
+.slider li .wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 22, SCSS/_main.scss */
+  .slider li .wrapper {
+    justify-content: center;
+  }
+}
+
+/* line 33, SCSS/_main.scss */
+.slider li .slider-caption {
+  align-self: center;
+  width: calc(100% - 400px);
+  position: relative;
+  z-index: 200;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 33, SCSS/_main.scss */
+  .slider li .slider-caption {
+    width: 100%;
+  }
+}
+
+/* line 43, SCSS/_main.scss */
+.slider li .slider-caption .titulo-slider {
+  font: 45px "Montserrat";
+  font-weight: bolder;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 43, SCSS/_main.scss */
+  .slider li .slider-caption .titulo-slider {
+    font-size: 30px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+/* line 57, SCSS/_main.scss */
+.slider li .slider-caption p {
+  font: 30px "Secular One";
+  color: #606060;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 57, SCSS/_main.scss */
+  .slider li .slider-caption p {
+    display: none;
+  }
+}
+
+/* line 67, SCSS/_main.scss */
+.slider li .img-slider {
+  position: relative;
+  width: 380px;
+  bottom: -20px;
+}
+
+/* line 74, SCSS/_main.scss */
+.slider .flecha-slider {
+  position: absolute;
+}
+
+/* line 78, SCSS/_main.scss */
+.slider .prev, .slider .next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: rgba(14, 117, 206, 0.4);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 78, SCSS/_main.scss */
+  .slider .prev, .slider .next {
+    display: none;
+  }
+}
+
+/* line 90, SCSS/_main.scss */
+.slider .prev:hover, .slider .next:hover {
+  color: #0e75ce;
+}
+
+/* line 95, SCSS/_main.scss */
+.slider .prev {
+  left: 10px;
+}
+
+/* line 99, SCSS/_main.scss */
+.slider .next {
+  right: 10px;
+}
+
+/* line 104, SCSS/_main.scss */
+.slogan {
+  width: 80%;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-top: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
+  font: 30px "Secular One";
+  color: #606060;
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 104, SCSS/_main.scss */
+  .slogan {
+    width: 100%;
+  }
+}
+
+/* line 120, SCSS/_main.scss */
+.articles article {
+  padding: 30px 0;
+}
+
+/* line 123, SCSS/_main.scss */
+.articles article:not(:last-child) {
+  border-bottom: 2px solid #b9b9b9;
+}
+
+/* line 128, SCSS/_main.scss */
+.articles article:nth-child(odd) .wrapper {
+  flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 128, SCSS/_main.scss */
+  .articles article:nth-child(odd) .wrapper {
+    flex-direction: column;
+  }
+}
+
+/* line 137, SCSS/_main.scss */
+.articles article .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 137, SCSS/_main.scss */
+  .articles article .wrapper {
+    flex-direction: column;
+  }
+}
+
+/* line 146, SCSS/_main.scss */
+.articles article .wrapper .texto-article {
+  width: calc(47% - 4rem);
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 146, SCSS/_main.scss */
+  .articles article .wrapper .texto-article {
+    width: 100%;
+  }
+}
+
+/* line 154, SCSS/_main.scss */
+.articles article .wrapper .titulo-article {
+  font: 50px "Secular One";
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 154, SCSS/_main.scss */
+  .articles article .wrapper .titulo-article {
+    font-size: 35px;
+  }
+}
+
+/* line 163, SCSS/_main.scss */
+.articles article .wrapper p {
+  line-height: 1.2;
+}
+
+/* line 167, SCSS/_main.scss */
+.articles article .wrapper .img-article {
+  max-width: 800px;
+  width: 53%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 167, SCSS/_main.scss */
+  .articles article .wrapper .img-article {
+    width: 100%;
+  }
+}
+
+/*===============  Fin de Main  ================*/
+/*==============================================
+=                      Footer                   =
+===============================================*/
+/* line 5, SCSS/_footer.scss */
+footer {
+  font-family: "Secular One";
+}
+
+/* line 8, SCSS/_footer.scss */
+footer .contactos-footer {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 8, SCSS/_footer.scss */
+  footer .contactos-footer {
+    flex-direction: column;
+  }
+}
+
+/* line 15, SCSS/_footer.scss */
+footer .contactos-footer .contacto-footer {
+  width: 50%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 15, SCSS/_footer.scss */
+  footer .contactos-footer .contacto-footer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 15, SCSS/_footer.scss */
+  footer .contactos-footer .contacto-footer {
+    font-size: 20px;
+  }
+}
+
+/* line 29, SCSS/_footer.scss */
+footer .contactos-footer .contacto-footer a {
+  font-size: 39px;
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 29, SCSS/_footer.scss */
+  footer .contactos-footer .contacto-footer a {
+    font-size: 23px;
+  }
+}
+
+/* line 38, SCSS/_footer.scss */
+footer .contactos-footer .whatsapp-footer {
+  background-color: #868686;
+  color: #fff;
+}
+
+/* line 42, SCSS/_footer.scss */
+footer .contactos-footer .whatsapp-footer a {
+  color: #fff;
+}
+
+/* line 47, SCSS/_footer.scss */
+footer .contactos-footer .email-footer {
+  background-color: #2d2d2d;
+}
+
+/* line 50, SCSS/_footer.scss */
+footer .contactos-footer .email-footer a {
+  color: #0e75ce;
+}
+
+/* line 56, SCSS/_footer.scss */
+footer .contacto-footer, footer .enlaces-footer {
+  padding: 20px 0;
+}
+
+/* line 60, SCSS/_footer.scss */
+footer .enlaces-footer {
+  background-color: #e0e0e0;
+  box-shadow: 0 -1px 4px 1px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 3;
+}
+
+/* line 66, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 66, SCSS/_footer.scss */
+  footer .enlaces-footer .columnas-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 75, SCSS/_footer.scss */
+  footer .enlaces-footer .columnas-footer nav {
+    text-align: center;
+    margin-bottom: 17px;
+  }
+}
+
+/* line 81, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer nav .titulo-enlaces {
+  color: #0e75ce;
+  font-size: 25px;
+}
+
+/* line 86, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer nav ul {
+  list-style: none;
+}
+
+/* line 89, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer nav ul a {
+  font-size: 20px;
+  color: #474747;
+}
+
+/* line 93, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer nav ul a:hover {
+  color: #0e75ce;
+}
+
+/* line 100, SCSS/_footer.scss */
+footer .enlaces-footer .columnas-footer .logo-footer {
+  width: 240px;
+  align-self: center;
+}
+
+/* line 106, SCSS/_footer.scss */
+footer .enlaces-footer .copy-footer {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #868686;
+  margin-top: 25.5px;
+}
+
+/*==============  Fin de Footer  ===============*/
